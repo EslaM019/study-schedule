@@ -1,0 +1,311 @@
+{
+  "name": "Raindrop → Notion Auto Router (Webhook)",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "raindrop-webhook",
+        "responseMode": "onReceived",
+        "responseData": "allEntries"
+      },
+      "id": "1",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [240, 300],
+      "webhookId": "raindrop-webhook"
+    },
+    {
+      "parameters": {
+        "mode": "rules",
+        "rules": {
+          "rules": [
+            { "conditions": { "string": [{ "value1": "={{$json[\"body\"][\"collection\"][\"title\"]}}", "operation": "equal", "value2": "Movies" }] }, "output": 0 },
+            { "conditions": { "string": [{ "value1": "={{$json[\"body\"][\"collection\"][\"title\"]}}", "operation": "equal", "value2": "TV Series" }] }, "output": 1 },
+            { "conditions": { "string": [{ "value1": "={{$json[\"body\"][\"collection\"][\"title\"]}}", "operation": "equal", "value2": "Movies Watched" }] }, "output": 2 },
+            { "conditions": { "string": [{ "value1": "={{$json[\"body\"][\"collection\"][\"title\"]}}", "operation": "equal", "value2": "TV Series Watched" }] }, "output": 3 },
+            { "conditions": { "string": [{ "value1": "={{$json[\"body\"][\"collection\"][\"title\"]}}", "operation": "equal", "value2": "Music" }] }, "output": 4 },
+            { "conditions": { "string": [{ "value1": "={{$json[\"body\"][\"collection\"][\"title\"]}}", "operation": "equal", "value2": "Liked Videos" }] }, "output": 5 },
+            { "conditions": { "string": [{ "value1": "={{$json[\"body\"][\"collection\"][\"title\"]}}", "operation": "equal", "value2": "Games" }] }, "output": 6 },
+            { "conditions": { "string": [{ "value1": "={{$json[\"body\"][\"collection\"][\"title\"]}}", "operation": "equal", "value2": "Apps" }] }, "output": 7 },
+            { "conditions": { "string": [{ "value1": "={{$json[\"body\"][\"collection\"][\"title\"]}}", "operation": "equal", "value2": "apps and games moded websites" }] }, "output": 8 },
+            { "conditions": { "string": [{ "value1": "={{$json[\"body\"][\"collection\"][\"title\"]}}", "operation": "equal", "value2": "Ai links websites" }] }, "output": 9 },
+            { "conditions": { "string": [{ "value1": "={{$json[\"body\"][\"collection\"][\"title\"]}}", "operation": "equal", "value2": "Torrent" }] }, "output": 10 },
+            { "conditions": { "string": [{ "value1": "={{$json[\"body\"][\"collection\"][\"title\"]}}", "operation": "equal", "value2": "لم المنهج" }] }, "output": 11 }
+          ]
+        }
+      },
+      "id": "2",
+      "name": "Collection Switch",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3,
+      "position": [520, 300]
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "create",
+        "databaseId": "NOTION_DB_MOVIES_TO_WATCH",
+        "title": "={{$json[\"body\"][\"item\"][\"title\"]}}",
+        "propertiesUi": {
+          "propertyValues": [
+            { "key": "الرابط|url", "urlValue": "={{$json[\"body\"][\"item\"][\"link\"]}}" },
+            { "key": "الملاحظة|rich_text", "textContent": "={{$json[\"body\"][\"item\"][\"note\"] || \"\"}}" }
+          ]
+        }
+      },
+      "id": "3",
+      "name": "Movies To Watch",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [920, -240],
+      "credentials": { "notionApi": { "id": "YOUR_NOTION_CREDENTIAL_ID", "name": "Notion Account" } }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "create",
+        "databaseId": "NOTION_DB_MOVIES_TO_WATCH",
+        "title": "={{$json[\"body\"][\"item\"][\"title\"]}}",
+        "propertiesUi": {
+          "propertyValues": [
+            { "key": "الرابط|url", "urlValue": "={{$json[\"body\"][\"item\"][\"link\"]}}" },
+            { "key": "الملاحظة|rich_text", "textContent": "={{$json[\"body\"][\"item\"][\"note\"] || \"\"}}" }
+          ]
+        }
+      },
+      "id": "4",
+      "name": "TV Series To Watch",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [920, -120],
+      "credentials": { "notionApi": { "id": "YOUR_NOTION_CREDENTIAL_ID", "name": "Notion Account" } }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "create",
+        "databaseId": "NOTION_DB_WATCHED",
+        "title": "={{$json[\"body\"][\"item\"][\"title\"]}}",
+        "propertiesUi": {
+          "propertyValues": [
+            { "key": "الرابط|url", "urlValue": "={{$json[\"body\"][\"item\"][\"link\"]}}" },
+            { "key": "الملاحظة|rich_text", "textContent": "={{$json[\"body\"][\"item\"][\"note\"] || \"\"}}" }
+          ]
+        }
+      },
+      "id": "5",
+      "name": "Movies Watched",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [920, 0],
+      "credentials": { "notionApi": { "id": "YOUR_NOTION_CREDENTIAL_ID", "name": "Notion Account" } }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "create",
+        "databaseId": "NOTION_DB_WATCHED",
+        "title": "={{$json[\"body\"][\"item\"][\"title\"]}}",
+        "propertiesUi": {
+          "propertyValues": [
+            { "key": "الرابط|url", "urlValue": "={{$json[\"body\"][\"item\"][\"link\"]}}" },
+            { "key": "الملاحظة|rich_text", "textContent": "={{$json[\"body\"][\"item\"][\"note\"] || \"\"}}" }
+          ]
+        }
+      },
+      "id": "6",
+      "name": "TV Series Watched",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [920, 120],
+      "credentials": { "notionApi": { "id": "YOUR_NOTION_CREDENTIAL_ID", "name": "Notion Account" } }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "create",
+        "databaseId": "NOTION_DB_MUSIC",
+        "title": "={{$json[\"body\"][\"item\"][\"title\"]}}",
+        "propertiesUi": {
+          "propertyValues": [
+            { "key": "الرابط|url", "urlValue": "={{$json[\"body\"][\"item\"][\"link\"]}}" },
+            { "key": "الملاحظة|rich_text", "textContent": "={{$json[\"body\"][\"item\"][\"note\"] || \"\"}}" }
+          ]
+        }
+      },
+      "id": "7",
+      "name": "Music DB",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [920, 240],
+      "credentials": { "notionApi": { "id": "YOUR_NOTION_CREDENTIAL_ID", "name": "Notion Account" } }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "create",
+        "databaseId": "NOTION_DB_YOUTUBE_MUSIC",
+        "title": "={{$json[\"body\"][\"item\"][\"title\"]}}",
+        "propertiesUi": {
+          "propertyValues": [
+            { "key": "الرابط|url", "urlValue": "={{$json[\"body\"][\"item\"][\"link\"]}}" },
+            { "key": "الملاحظة|rich_text", "textContent": "={{$json[\"body\"][\"item\"][\"note\"] || \"\"}}" }
+          ]
+        }
+      },
+      "id": "8",
+      "name": "Youtube Music List",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [920, 360],
+      "credentials": { "notionApi": { "id": "YOUR_NOTION_CREDENTIAL_ID", "name": "Notion Account" } }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "create",
+        "databaseId": "NOTION_DB_GAMES",
+        "title": "={{$json[\"body\"][\"item\"][\"title\"]}}",
+        "propertiesUi": {
+          "propertyValues": [
+            { "key": "الرابط|url", "urlValue": "={{$json[\"body\"][\"item\"][\"link\"]}}" },
+            { "key": "الملاحظة|rich_text", "textContent": "={{$json[\"body\"][\"item\"][\"note\"] || \"\"}}" }
+          ]
+        }
+      },
+      "id": "9",
+      "name": "Games DB",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [920, 480],
+      "credentials": { "notionApi": { "id": "YOUR_NOTION_CREDENTIAL_ID", "name": "Notion Account" } }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "create",
+        "databaseId": "NOTION_DB_APPS",
+        "title": "={{$json[\"body\"][\"item\"][\"title\"]}}",
+        "propertiesUi": {
+          "propertyValues": [
+            { "key": "الرابط|url", "urlValue": "={{$json[\"body\"][\"item\"][\"link\"]}}" },
+            { "key": "الملاحظة|rich_text", "textContent": "={{$json[\"body\"][\"item\"][\"note\"] || \"\"}}" }
+          ]
+        }
+      },
+      "id": "10",
+      "name": "Apps DB",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [920, 600],
+      "credentials": { "notionApi": { "id": "YOUR_NOTION_CREDENTIAL_ID", "name": "Notion Account" } }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "create",
+        "databaseId": "NOTION_DB_MODDED_WEBSITES",
+        "title": "={{$json[\"body\"][\"item\"][\"title\"]}}",
+        "propertiesUi": {
+          "propertyValues": [
+            { "key": "الرابط|url", "urlValue": "={{$json[\"body\"][\"item\"][\"link\"]}}" },
+            { "key": "الملاحظة|rich_text", "textContent": "={{$json[\"body\"][\"item\"][\"note\"] || \"\"}}" }
+          ]
+        }
+      },
+      "id": "11",
+      "name": "Modded Websites DB",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [920, 720],
+      "credentials": { "notionApi": { "id": "YOUR_NOTION_CREDENTIAL_ID", "name": "Notion Account" } }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "create",
+        "databaseId": "NOTION_DB_AI_WEBSITES",
+        "title": "={{$json[\"body\"][\"item\"][\"title\"]}}",
+        "propertiesUi": {
+          "propertyValues": [
+            { "key": "الرابط|url", "urlValue": "={{$json[\"body\"][\"item\"][\"link\"]}}" },
+            { "key": "الملاحظة|rich_text", "textContent": "={{$json[\"body\"][\"item\"][\"note\"] || \"\"}}" }
+          ]
+        }
+      },
+      "id": "12",
+      "name": "AI Websites DB",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [920, 840],
+      "credentials": { "notionApi": { "id": "YOUR_NOTION_CREDENTIAL_ID", "name": "Notion Account" } }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "create",
+        "databaseId": "NOTION_DB_TORRENT",
+        "title": "={{$json[\"body\"][\"item\"][\"title\"]}}",
+        "propertiesUi": {
+          "propertyValues": [
+            { "key": "الرابط|url", "urlValue": "={{$json[\"body\"][\"item\"][\"link\"]}}" },
+            { "key": "الملاحظة|rich_text", "textContent": "={{$json[\"body\"][\"item\"][\"note\"] || \"\"}}" }
+          ]
+        }
+      },
+      "id": "13",
+      "name": "Torrent DB",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [920, 960],
+      "credentials": { "notionApi": { "id": "YOUR_NOTION_CREDENTIAL_ID", "name": "Notion Account" } }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "create",
+        "databaseId": "NOTION_DB_CURRICULUM",
+        "title": "={{$json[\"body\"][\"item\"][\"title\"]}}",
+        "propertiesUi": {
+          "propertyValues": [
+            { "key": "الرابط|url", "urlValue": "={{$json[\"body\"][\"item\"][\"link\"]}}" },
+            { "key": "الملاحظة|rich_text", "textContent": "={{$json[\"body\"][\"item\"][\"note\"] || \"\"}}" }
+          ]
+        }
+      },
+      "id": "14",
+      "name": "Curriculum DB",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [920, 1080],
+      "credentials": { "notionApi": { "id": "YOUR_NOTION_CREDENTIAL_ID", "name": "Notion Account" } }
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [[{ "node": "Collection Switch", "type": "main", "index": 0 }]]
+    },
+    "Collection Switch": {
+      "main": [
+        [{ "node": "Movies To Watch", "type": "main", "index": 0 }],
+        [{ "node": "TV Series To Watch", "type": "main", "index": 0 }],
+        [{ "node": "Movies Watched", "type": "main", "index": 0 }],
+        [{ "node": "TV Series Watched", "type": "main", "index": 0 }],
+        [{ "node": "Music DB", "type": "main", "index": 0 }],
+        [{ "node": "Youtube Music List", "type": "main", "index": 0 }],
+        [{ "node": "Games DB", "type": "main", "index": 0 }],
+        [{ "node": "Apps DB", "type": "main", "index": 0 }],
+        [{ "node": "Modded Websites DB", "type": "main", "index": 0 }],
+        [{ "node": "AI Websites DB", "type": "main", "index": 0 }],
+        [{ "node": "Torrent DB", "type": "main", "index": 0 }],
+        [{ "node": "Curriculum DB", "type": "main", "index": 0 }]
+      ]
+    }
+  },
+  "active": false,
+  "settings": { "executionOrder": "v1" },
+  "versionId": "2",
+  "meta": { "instanceId": "raindrop-notion-webhook" },
+  "id": "raindrop-notion-webhook"
+}
