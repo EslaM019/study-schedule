@@ -44,7 +44,7 @@
       "parameters": {
         "resource": "databasePage",
         "operation": "create",
-        "databaseId": "NOTION_DB_MOVIES_TO_WATCH",
+        "databaseId": "1f8ddaa6f86d492083f25ec44372932d",
         "title": "={{$json[\"body\"][\"item\"][\"title\"]}}",
         "propertiesUi": {
           "propertyValues": [
@@ -57,13 +57,13 @@
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2,
       "position": [900, -300],
-      "credentials": { "notionApi": { "id": "YOUR_NOTION_CREDENTIAL_ID", "name": "Notion Account" } }
+      "credentials": { "notionApi": { "id": "YOUR_NOTION_CREDENTIAL_ID", "name": "Notion account 2" } }
     },
     {
       "parameters": {
         "resource": "databasePage",
         "operation": "create",
-        "databaseId": "NOTION_DB_MOVIES_TO_WATCH",
+        "databaseId": "1f8ddaa6f86d492083f25ec44372932d",
         "title": "={{$json[\"body\"][\"item\"][\"title\"]}}",
         "propertiesUi": {
           "propertyValues": [
@@ -76,13 +76,13 @@
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2,
       "position": [900, -180],
-      "credentials": { "notionApi": { "id": "YOUR_NOTION_CREDENTIAL_ID", "name": "Notion Account" } }
+      "credentials": { "notionApi": { "id": "YOUR_NOTION_CREDENTIAL_ID", "name": "Notion account 2" } }
     },
     {
       "parameters": {
         "resource": "databasePage",
         "operation": "create",
-        "databaseId": "NOTION_DB_WATCHED",
+        "databaseId": "d477b539d83c42ef91062dd634fc3e1b",
         "title": "={{$json[\"body\"][\"item\"][\"title\"]}}",
         "propertiesUi": {
           "propertyValues": [
@@ -95,13 +95,13 @@
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2,
       "position": [900, -60],
-      "credentials": { "notionApi": { "id": "YOUR_NOTION_CREDENTIAL_ID", "name": "Notion Account" } }
+      "credentials": { "notionApi": { "id": "YOUR_NOTION_CREDENTIAL_ID", "name": "Notion account 2" } }
     },
     {
       "parameters": {
         "resource": "databasePage",
         "operation": "create",
-        "databaseId": "NOTION_DB_WATCHED",
+        "databaseId": "d477b539d83c42ef91062dd634fc3e1b",
         "title": "={{$json[\"body\"][\"item\"][\"title\"]}}",
         "propertiesUi": {
           "propertyValues": [
@@ -114,13 +114,13 @@
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2,
       "position": [900, 60],
-      "credentials": { "notionApi": { "id": "YOUR_NOTION_CREDENTIAL_ID", "name": "Notion Account" } }
+      "credentials": { "notionApi": { "id": "YOUR_NOTION_CREDENTIAL_ID", "name": "Notion account 2" } }
     },
     {
       "parameters": {
         "resource": "databasePage",
         "operation": "create",
-        "databaseId": "NOTION_DB_MUSIC",
+        "databaseId": "2ad2e0b60711420ca04fb31fd7eb24ee",
         "title": "={{$json[\"body\"][\"item\"][\"title\"]}}",
         "propertiesUi": {
           "propertyValues": [
@@ -133,13 +133,13 @@
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2,
       "position": [900, 180],
-      "credentials": { "notionApi": { "id": "YOUR_NOTION_CREDENTIAL_ID", "name": "Notion Account" } }
+      "credentials": { "notionApi": { "id": "YOUR_NOTION_CREDENTIAL_ID", "name": "Notion account 2" } }
     },
     {
       "parameters": {
         "resource": "databasePage",
         "operation": "create",
-        "databaseId": "NOTION_DB_YOUTUBE_MUSIC",
+        "databaseId": "3577fbfb06ca81f4bd03c578700b3048",
         "title": "={{$json[\"body\"][\"item\"][\"title\"]}}",
         "propertiesUi": {
           "propertyValues": [
@@ -152,13 +152,13 @@
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2,
       "position": [900, 300],
-      "credentials": { "notionApi": { "id": "YOUR_NOTION_CREDENTIAL_ID", "name": "Notion Account" } }
+      "credentials": { "notionApi": { "id": "YOUR_NOTION_CREDENTIAL_ID", "name": "Notion account 2" } }
     },
     {
       "parameters": {
         "resource": "databasePage",
         "operation": "create",
-        "databaseId": "NOTION_DB_GAMES",
+        "databaseId": "a533b33dba1048d3b0ac5587ec348a84",
         "title": "={{$json[\"body\"][\"item\"][\"title\"]}}",
         "propertiesUi": {
           "propertyValues": [
@@ -171,13 +171,13 @@
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2,
       "position": [900, 420],
-      "credentials": { "notionApi": { "id": "YOUR_NOTION_CREDENTIAL_ID", "name": "Notion Account" } }
+      "credentials": { "notionApi": { "id": "YOUR_NOTION_CREDENTIAL_ID", "name": "Notion account 2" } }
     },
     {
       "parameters": {
         "resource": "databasePage",
         "operation": "create",
-        "databaseId": "NOTION_DB_APPS",
+        "databaseId": "bef359f4371b4dd1928a9993e3eecac2",
         "title": "={{$json[\"body\"][\"item\"][\"title\"]}}",
         "propertiesUi": {
           "propertyValues": [
@@ -190,13 +190,13 @@
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2,
       "position": [900, 540],
-      "credentials": { "notionApi": { "id": "YOUR_NOTION_CREDENTIAL_ID", "name": "Notion Account" } }
+      "credentials": { "notionApi": { "id": "YOUR_NOTION_CREDENTIAL_ID", "name": "Notion account 2" } }
     },
     {
       "parameters": {
         "resource": "databasePage",
         "operation": "create",
-        "databaseId": "NOTION_DB_MODDED_WEBSITES",
+        "databaseId": "70a097c8c6f6451ebf013849b1df6cfd",
         "title": "={{$json[\"body\"][\"item\"][\"title\"]}}",
         "propertiesUi": {
           "propertyValues": [
@@ -209,13 +209,13 @@
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2,
       "position": [900, 660],
-      "credentials": { "notionApi": { "id": "YOUR_NOTION_CREDENTIAL_ID", "name": "Notion Account" } }
+      "credentials": { "notionApi": { "id": "YOUR_NOTION_CREDENTIAL_ID", "name": "Notion account 2" } }
     },
     {
       "parameters": {
         "resource": "databasePage",
         "operation": "create",
-        "databaseId": "NOTION_DB_AI_WEBSITES",
+        "databaseId": "9b505a791cd143469b81fcbe1e1afa71",
         "title": "={{$json[\"body\"][\"item\"][\"title\"]}}",
         "propertiesUi": {
           "propertyValues": [
@@ -228,7 +228,7 @@
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2,
       "position": [900, 780],
-      "credentials": { "notionApi": { "id": "YOUR_NOTION_CREDENTIAL_ID", "name": "Notion Account" } }
+      "credentials": { "notionApi": { "id": "YOUR_NOTION_CREDENTIAL_ID", "name": "Notion account 2" } }
     },
     {
       "parameters": {
@@ -247,13 +247,13 @@
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2,
       "position": [900, 900],
-      "credentials": { "notionApi": { "id": "YOUR_NOTION_CREDENTIAL_ID", "name": "Notion Account" } }
+      "credentials": { "notionApi": { "id": "YOUR_NOTION_CREDENTIAL_ID", "name": "Notion account 2" } }
     },
     {
       "parameters": {
         "resource": "databasePage",
         "operation": "create",
-        "databaseId": "NOTION_DB_CURRICULUM",
+        "databaseId": "3587fbfb06ca81cf8b81e59cd9544cc7",
         "title": "={{$json[\"body\"][\"item\"][\"title\"]}}",
         "propertiesUi": {
           "propertyValues": [
@@ -266,7 +266,7 @@
       "type": "n8n-nodes-base.notion",
       "typeVersion": 2,
       "position": [900, 1020],
-      "credentials": { "notionApi": { "id": "YOUR_NOTION_CREDENTIAL_ID", "name": "Notion Account" } }
+      "credentials": { "notionApi": { "id": "YOUR_NOTION_CREDENTIAL_ID", "name": "Notion account 2" } }
     }
   ],
   "connections": {
@@ -292,7 +292,7 @@
   },
   "active": false,
   "settings": { "executionOrder": "v1" },
-  "versionId": "3",
+  "versionId": "4",
   "meta": { "instanceId": "raindrop-notion-webhook" },
   "id": "raindrop-notion-webhook"
 }
