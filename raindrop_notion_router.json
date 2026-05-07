@@ -1,0 +1,539 @@
+{
+  "name": "Raindrop → Notion Auto Router",
+  "nodes": [
+    {
+      "parameters": {
+        "events": [
+          "bookmark.created"
+        ]
+      },
+      "id": "1",
+      "name": "Raindrop Trigger",
+      "type": "n8n-nodes-base.raindropIoTrigger",
+      "typeVersion": 1,
+      "position": [
+        240,
+        300
+      ],
+      "credentials": {
+        "raindropIoApi": {
+          "id": "YOUR_RAINDROP_CREDENTIAL_ID",
+          "name": "Raindrop Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "propertyName": "collection.title",
+        "rules": [
+          {
+            "operation": "equal",
+            "value": "Movies"
+          },
+          {
+            "operation": "equal",
+            "value": "TV Series"
+          },
+          {
+            "operation": "equal",
+            "value": "Movies Watched"
+          },
+          {
+            "operation": "equal",
+            "value": "TV Series Watched"
+          },
+          {
+            "operation": "equal",
+            "value": "Music"
+          },
+          {
+            "operation": "equal",
+            "value": "Liked Videos"
+          },
+          {
+            "operation": "equal",
+            "value": "Games"
+          },
+          {
+            "operation": "equal",
+            "value": "Apps"
+          },
+          {
+            "operation": "equal",
+            "value": "apps and games moded websites"
+          },
+          {
+            "operation": "equal",
+            "value": "Ai links websites"
+          },
+          {
+            "operation": "equal",
+            "value": "Torrent"
+          },
+          {
+            "operation": "equal",
+            "value": "لم المنهج"
+          }
+        ]
+      },
+      "id": "2",
+      "name": "Collection Switch",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3,
+      "position": [
+        520,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "create",
+        "databaseId": "NOTION_DB_MOVIES_TO_WATCH",
+        "title": "={{$json[\"title\"]}}",
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "الرابط|url",
+              "urlValue": "={{$json[\"link\"]}}"
+            },
+            {
+              "key": "الملاحظة|rich_text",
+              "textContent": "={{$json[\"note\"] || \"\"}}"
+            }
+          ]
+        }
+      },
+      "id": "3",
+      "name": "Movies & Series To Watch",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [
+        920,
+        -120
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "YOUR_NOTION_CREDENTIAL_ID",
+          "name": "Notion Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "create",
+        "databaseId": "NOTION_DB_WATCHED",
+        "title": "={{$json[\"title\"]}}",
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "الرابط|url",
+              "urlValue": "={{$json[\"link\"]}}"
+            },
+            {
+              "key": "الملاحظة|rich_text",
+              "textContent": "={{$json[\"note\"] || \"\"}}"
+            }
+          ]
+        }
+      },
+      "id": "4",
+      "name": "Watched Movies & Series",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [
+        920,
+        0
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "YOUR_NOTION_CREDENTIAL_ID",
+          "name": "Notion Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "create",
+        "databaseId": "NOTION_DB_MUSIC",
+        "title": "={{$json[\"title\"]}}",
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "الرابط|url",
+              "urlValue": "={{$json[\"link\"]}}"
+            },
+            {
+              "key": "الملاحظة|rich_text",
+              "textContent": "={{$json[\"note\"] || \"\"}}"
+            }
+          ]
+        }
+      },
+      "id": "5",
+      "name": "Music DB",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [
+        920,
+        120
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "YOUR_NOTION_CREDENTIAL_ID",
+          "name": "Notion Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "create",
+        "databaseId": "NOTION_DB_YOUTUBE_MUSIC",
+        "title": "={{$json[\"title\"]}}",
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "الرابط|url",
+              "urlValue": "={{$json[\"link\"]}}"
+            },
+            {
+              "key": "الملاحظة|rich_text",
+              "textContent": "={{$json[\"note\"] || \"\"}}"
+            }
+          ]
+        }
+      },
+      "id": "6",
+      "name": "Youtube Music List",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [
+        920,
+        240
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "YOUR_NOTION_CREDENTIAL_ID",
+          "name": "Notion Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "create",
+        "databaseId": "NOTION_DB_GAMES",
+        "title": "={{$json[\"title\"]}}",
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "الرابط|url",
+              "urlValue": "={{$json[\"link\"]}}"
+            },
+            {
+              "key": "الملاحظة|rich_text",
+              "textContent": "={{$json[\"note\"] || \"\"}}"
+            }
+          ]
+        }
+      },
+      "id": "7",
+      "name": "Games DB",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [
+        920,
+        360
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "YOUR_NOTION_CREDENTIAL_ID",
+          "name": "Notion Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "create",
+        "databaseId": "NOTION_DB_APPS",
+        "title": "={{$json[\"title\"]}}",
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "الرابط|url",
+              "urlValue": "={{$json[\"link\"]}}"
+            },
+            {
+              "key": "الملاحظة|rich_text",
+              "textContent": "={{$json[\"note\"] || \"\"}}"
+            }
+          ]
+        }
+      },
+      "id": "8",
+      "name": "Apps DB",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [
+        920,
+        480
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "YOUR_NOTION_CREDENTIAL_ID",
+          "name": "Notion Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "create",
+        "databaseId": "NOTION_DB_MODDED_WEBSITES",
+        "title": "={{$json[\"title\"]}}",
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "الرابط|url",
+              "urlValue": "={{$json[\"link\"]}}"
+            },
+            {
+              "key": "الملاحظة|rich_text",
+              "textContent": "={{$json[\"note\"] || \"\"}}"
+            }
+          ]
+        }
+      },
+      "id": "9",
+      "name": "Modded Websites DB",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [
+        920,
+        600
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "YOUR_NOTION_CREDENTIAL_ID",
+          "name": "Notion Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "create",
+        "databaseId": "NOTION_DB_AI_WEBSITES",
+        "title": "={{$json[\"title\"]}}",
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "الرابط|url",
+              "urlValue": "={{$json[\"link\"]}}"
+            },
+            {
+              "key": "الملاحظة|rich_text",
+              "textContent": "={{$json[\"note\"] || \"\"}}"
+            }
+          ]
+        }
+      },
+      "id": "10",
+      "name": "AI Websites DB",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [
+        920,
+        720
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "YOUR_NOTION_CREDENTIAL_ID",
+          "name": "Notion Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "create",
+        "databaseId": "NOTION_DB_TORRENT",
+        "title": "={{$json[\"title\"]}}",
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "الرابط|url",
+              "urlValue": "={{$json[\"link\"]}}"
+            },
+            {
+              "key": "الملاحظة|rich_text",
+              "textContent": "={{$json[\"note\"] || \"\"}}"
+            }
+          ]
+        }
+      },
+      "id": "11",
+      "name": "Torrent DB",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [
+        920,
+        840
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "YOUR_NOTION_CREDENTIAL_ID",
+          "name": "Notion Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "create",
+        "databaseId": "NOTION_DB_CURRICULUM",
+        "title": "={{$json[\"title\"]}}",
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "الرابط|url",
+              "urlValue": "={{$json[\"link\"]}}"
+            },
+            {
+              "key": "الملاحظة|rich_text",
+              "textContent": "={{$json[\"note\"] || \"\"}}"
+            }
+          ]
+        }
+      },
+      "id": "12",
+      "name": "Curriculum DB",
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2,
+      "position": [
+        920,
+        960
+      ],
+      "credentials": {
+        "notionApi": {
+          "id": "YOUR_NOTION_CREDENTIAL_ID",
+          "name": "Notion Account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Raindrop Trigger": {
+      "main": [
+        [
+          {
+            "node": "Collection Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Collection Switch": {
+      "main": [
+        [
+          {
+            "node": "Movies & Series To Watch",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Movies & Series To Watch",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Watched Movies & Series",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Watched Movies & Series",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Music DB",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Youtube Music List",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Games DB",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Apps DB",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Modded Websites DB",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "AI Websites DB",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Torrent DB",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Curriculum DB",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "1",
+  "meta": {
+    "instanceId": "raindrop-notion-router"
+  },
+  "id": "raindrop-notion-router"
+}
