@@ -45,12 +45,7 @@
         "resource": "databasePage",
         "operation": "create",
         "databaseId": "1f8ddaa6f86d492083f25ec44372932d",
-        "title": "={{$json[\"body\"][\"item\"][\"title\"]}}",
-        "propertiesUi": {
-          "propertyValues": [
-            { "key": "URL|url", "urlValue": "={{$json[\"body\"][\"item\"][\"link\"]}}" }
-          ]
-        }
+        "title": "={{$json[\"body\"][\"item\"][\"title\"]}}"
       },
       "id": "node-3",
       "name": "Movies To Watch",
@@ -64,12 +59,7 @@
         "resource": "databasePage",
         "operation": "create",
         "databaseId": "1f8ddaa6f86d492083f25ec44372932d",
-        "title": "={{$json[\"body\"][\"item\"][\"title\"]}}",
-        "propertiesUi": {
-          "propertyValues": [
-            { "key": "URL|url", "urlValue": "={{$json[\"body\"][\"item\"][\"link\"]}}" }
-          ]
-        }
+        "title": "={{$json[\"body\"][\"item\"][\"title\"]}}"
       },
       "id": "node-4",
       "name": "TV Series To Watch",
@@ -83,12 +73,7 @@
         "resource": "databasePage",
         "operation": "create",
         "databaseId": "d477b539d83c42ef91062dd634fc3e1b",
-        "title": "={{$json[\"body\"][\"item\"][\"title\"]}}",
-        "propertiesUi": {
-          "propertyValues": [
-            { "key": "URL|url", "urlValue": "={{$json[\"body\"][\"item\"][\"link\"]}}" }
-          ]
-        }
+        "title": "={{$json[\"body\"][\"item\"][\"title\"]}}"
       },
       "id": "node-5",
       "name": "Movies Watched",
@@ -102,12 +87,7 @@
         "resource": "databasePage",
         "operation": "create",
         "databaseId": "d477b539d83c42ef91062dd634fc3e1b",
-        "title": "={{$json[\"body\"][\"item\"][\"title\"]}}",
-        "propertiesUi": {
-          "propertyValues": [
-            { "key": "URL|url", "urlValue": "={{$json[\"body\"][\"item\"][\"link\"]}}" }
-          ]
-        }
+        "title": "={{$json[\"body\"][\"item\"][\"title\"]}}"
       },
       "id": "node-6",
       "name": "TV Series Watched",
@@ -121,12 +101,7 @@
         "resource": "databasePage",
         "operation": "create",
         "databaseId": "2ad2e0b60711420ca04fb31fd7eb24ee",
-        "title": "={{$json[\"body\"][\"item\"][\"title\"]}}",
-        "propertiesUi": {
-          "propertyValues": [
-            { "key": "URL|url", "urlValue": "={{$json[\"body\"][\"item\"][\"link\"]}}" }
-          ]
-        }
+        "title": "={{$json[\"body\"][\"item\"][\"title\"]}}"
       },
       "id": "node-7",
       "name": "Music DB",
@@ -140,12 +115,7 @@
         "resource": "databasePage",
         "operation": "create",
         "databaseId": "3577fbfb06ca81f4bd03c578700b3048",
-        "title": "={{$json[\"body\"][\"item\"][\"title\"]}}",
-        "propertiesUi": {
-          "propertyValues": [
-            { "key": "URL|url", "urlValue": "={{$json[\"body\"][\"item\"][\"link\"]}}" }
-          ]
-        }
+        "title": "={{$json[\"body\"][\"item\"][\"title\"]}}"
       },
       "id": "node-8",
       "name": "Youtube Music List",
@@ -159,12 +129,7 @@
         "resource": "databasePage",
         "operation": "create",
         "databaseId": "a533b33dba1048d3b0ac5587ec348a84",
-        "title": "={{$json[\"body\"][\"item\"][\"title\"]}}",
-        "propertiesUi": {
-          "propertyValues": [
-            { "key": "URL|url", "urlValue": "={{$json[\"body\"][\"item\"][\"link\"]}}" }
-          ]
-        }
+        "title": "={{$json[\"body\"][\"item\"][\"title\"]}}"
       },
       "id": "node-9",
       "name": "Games DB",
@@ -178,12 +143,7 @@
         "resource": "databasePage",
         "operation": "create",
         "databaseId": "bef359f4371b4dd1928a9993e3eecac2",
-        "title": "={{$json[\"body\"][\"item\"][\"title\"]}}",
-        "propertiesUi": {
-          "propertyValues": [
-            { "key": "URL|url", "urlValue": "={{$json[\"body\"][\"item\"][\"link\"]}}" }
-          ]
-        }
+        "title": "={{$json[\"body\"][\"item\"][\"title\"]}}"
       },
       "id": "node-10",
       "name": "Apps DB",
@@ -197,12 +157,7 @@
         "resource": "databasePage",
         "operation": "create",
         "databaseId": "70a097c8c6f6451ebf013849b1df6cfd",
-        "title": "={{$json[\"body\"][\"item\"][\"title\"]}}",
-        "propertiesUi": {
-          "propertyValues": [
-            { "key": "URL|url", "urlValue": "={{$json[\"body\"][\"item\"][\"link\"]}}" }
-          ]
-        }
+        "title": "={{$json[\"body\"][\"item\"][\"title\"]}}"
       },
       "id": "node-11",
       "name": "Modded Websites DB",
@@ -216,12 +171,7 @@
         "resource": "databasePage",
         "operation": "create",
         "databaseId": "9b505a791cd143469b81fcbe1e1afa71",
-        "title": "={{$json[\"body\"][\"item\"][\"title\"]}}",
-        "propertiesUi": {
-          "propertyValues": [
-            { "key": "URL|url", "urlValue": "={{$json[\"body\"][\"item\"][\"link\"]}}" }
-          ]
-        }
+        "title": "={{$json[\"body\"][\"item\"][\"title\"]}}"
       },
       "id": "node-12",
       "name": "AI Websites DB",
@@ -235,12 +185,7 @@
         "resource": "databasePage",
         "operation": "create",
         "databaseId": "NOTION_DB_TORRENT",
-        "title": "={{$json[\"body\"][\"item\"][\"title\"]}}",
-        "propertiesUi": {
-          "propertyValues": [
-            { "key": "URL|url", "urlValue": "={{$json[\"body\"][\"item\"][\"link\"]}}" }
-          ]
-        }
+        "title": "={{$json[\"body\"][\"item\"][\"title\"]}}"
       },
       "id": "node-13",
       "name": "Torrent DB",
@@ -254,12 +199,7 @@
         "resource": "databasePage",
         "operation": "create",
         "databaseId": "3587fbfb06ca81cf8b81e59cd9544cc7",
-        "title": "={{$json[\"body\"][\"item\"][\"title\"]}}",
-        "propertiesUi": {
-          "propertyValues": [
-            { "key": "URL|url", "urlValue": "={{$json[\"body\"][\"item\"][\"link\"]}}" }
-          ]
-        }
+        "title": "={{$json[\"body\"][\"item\"][\"title\"]}}"
       },
       "id": "node-14",
       "name": "Curriculum DB",
@@ -292,7 +232,7 @@
   },
   "active": false,
   "settings": { "executionOrder": "v1" },
-  "versionId": "4",
+  "versionId": "5",
   "meta": { "instanceId": "raindrop-notion-webhook" },
   "id": "raindrop-notion-webhook"
 }
